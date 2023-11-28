@@ -1,0 +1,143 @@
+$primary : #150080;
+$accent: #d08642;
+$bg: #ffffff;
+$bg-accent: #e7e8e9;
+$disabled: #9c9c9c;
+$foreground: #2d264b;
+
+$default-gap : 15px;
+
+body {
+    font-family: monospace;
+    background: linear-gradient(0deg,$primary 0.03%, $accent);
+    color: $foreground;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 30px;
+    height: 100vh;
+}
+
+.quiz-container {
+    width: 550px;
+    background: $bg;
+    border-radius: 8px;
+    padding: 30px 60px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.quiz-question {
+    display: flex;
+    gap: $default-gap;
+    .quiz-no {
+        display: flex;
+    }
+}
+
+h2 {
+    font-size: 20px;
+    text-align: justify;
+}
+
+h4 {
+    font-size: 16px;
+}
+
+.ans-input {
+    input {
+        width: 90%;
+        margin-left: 25px;
+        border: 1px solid $disabled; 
+        border-radius: 12px;
+        padding: 12px 8px;
+        margin-top: 14px;
+        font-size: 16px;
+    }
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: $default-gap;
+    
+    li {
+        border: 1px solid $disabled; 
+        border-radius: 12px;
+        padding: 12px 8px;
+        list-style: none;
+        background: $bg;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .selected-answer {
+        background: $primary;
+        border: 1px solid $accent;
+        color: $bg;
+    }
+}
+
+.quiz-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.button-disabled {
+    background: $disabled;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 30px;
+    border: 0 solid;
+    border-radius: 6px;
+    outline: none;
+    background: linear-gradient(45deg,$primary 0.03%, $accent);
+    color:$bg-accent;
+    font-size: 14px;
+} 
+
+.result-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2{
+        text-align: center;
+    }
+
+    p{
+        font-size: 16px;
+
+        span {
+            font-size: 18px;
+            font-weight: bolder;
+        }
+    }
+
+    input {
+        width: 80%;
+        padding: 8px;
+        border-radius: 5px;
+    }
+}
+
+.timer-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    // border-bottom:1px solid #150080;
+
+    .progress {
+        // background: #2d264b;
+        height: 5px;
+        width: 0;
+        transition-duration: 1s;
+        transition-timing-function: linear;
+    }
+}
+
